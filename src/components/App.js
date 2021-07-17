@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Editor from "./Editor";
 import axios from 'axios';
 
@@ -7,6 +7,21 @@ function App() {
   const [css, setCss] = useState('')
   const [js, setJs] = useState('')
   const [active, setActive] = useState(0)
+  const [srcDoc, setSrcDoc] = useState('')
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(`
+      <html>
+        <style>${css}</style>
+        <body>${html}</body>
+        <script>${js}</script>
+      </html>
+      `)
+    }, 500)
+
+    return () => clearTimeout(timeout)
+  }, [html,css,js])
 
   let arr = [
     {
@@ -28,14 +43,6 @@ function App() {
       onChange: setJs
     }
   ]
-
-  let srcDoc = `
-  <html>
-    <style>${css}</style>
-    <body>${html}</body>
-    <script>${js}</script>
-  </html>
-  `
 
   return (
   <div className='container'>
@@ -69,7 +76,7 @@ function App() {
           className="btn"
           onClick={() => {
             const params = new URLSearchParams();
-            params.append("api_dev_key", "d359139791f1e74cd953415ba705f7c5")
+            params.append("api_dev_key", "vUhNddOnZ5qkQEh6PYmjrcmQ8nvO-tRA")
             params.append("api_option", "paste")
             params.append("api_paste_code", srcDoc)
             let url = "https://hidden-bayou-27416.herokuapp.com/https://pastebin.com/api/api_post.php"
