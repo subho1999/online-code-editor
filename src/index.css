@@ -23,6 +23,9 @@ body {
   height: 60vh;
 }
 
+.CodeMirror-wrap {
+  max-height: 40vh !important;
+}
 .file-explorer {
   display: flex;
   flex-direction: column;
