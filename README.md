@@ -1,8 +1,13 @@
 # Online Code Editor
 
-This has been hosted on: [Gitub Pages](https://subho1999.github.io/online-code-editor)
+This has been hosted on: [Github Pages](https://subho1999.github.io/online-code-editor)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Pastebin API doesn't support CORS
+
+This project handles pastebin API via a self hosted cors proxy. However, pastebin blocks the proxy after sometime.
+Thus, we can only do 2-3 pastes within a 24hr period.
 
 ## Available Scripts
 
@@ -39,8 +44,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `yarn deploy`
 
 To deploy this project on github pages
-
-# Pastebin API doesn't support CORS
-
-This project handles pastebin API via a self hosted cors proxy. However, pastebin blocks the proxy after sometime.
-Thus, we can only do 2-3 pastes within a 24hr period.
