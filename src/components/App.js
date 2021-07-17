@@ -73,7 +73,7 @@ function App() {
         >
           index.js
         </button>
-        <button 
+        {/* <button 
           className="btn"
           onClick={() => {
             const params = new URLSearchParams();
@@ -100,7 +100,7 @@ function App() {
           }}
         >
           Share
-        </button>
+        </button> */}
       </div>
       <Editor className='editor'
         obj={arr[active]}
