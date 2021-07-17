@@ -48,6 +48,7 @@ function App() {
   <div className='container'>
     <div className="pane top-pane">
       <div className="file-explorer">
+        <div className="label">File Explorer</div>
         <button 
           className="btn"
           onClick={()=>{
@@ -81,10 +82,20 @@ function App() {
             params.append("api_paste_code", srcDoc)
             let url = "https://hidden-bayou-27416.herokuapp.com/https://pastebin.com/api/api_post.php"
             try {
-              let res = axios.post(url,params);
-              console.log(res)
+              axios.post(url,params)
+              .then((response) => {
+                console.log("data")
+                if (response.status !== 200) {
+                  console.log("Rejected")
+                }
+              })
+              .catch((e) => {
+                console.log(e)
+              })
+              // console.log(res)
             } catch(e) {
-              console.log(e)
+              // console.log(e)
+              console.log("Rejected")
             }
           }}
         >

@@ -20,6 +20,7 @@ const Editor = (props) => {
 
     return (
         <div className="editor-container">
+            <p>Online Code Editor</p>
             <div className="title">
                 {fileName}
             </div>
